@@ -23,20 +23,11 @@
 
     <!-- Add your site or application content here -->
     <div class="container">
-      <div class="header">
-        <ul class="nav nav-pills pull-right">
-          <li class="active"><a ng-href="#">Home</a></li>
-          <li><a ng-href="#/about">About</a></li>
-          <li><a ng-href="#">Contact</a></li>
-        </ul>
-        <h3 class="text-muted">planner</h3>
-      </div>
-
+        <div class="col-sm-8 col-sm-offset-2">
+            <div ng-class="{ 'alert': flash, 'alert-success': flash.type === 'success', 'alert-danger': flash.type === 'error' }" ng-if="flash" ng-bind="flash.message"></div>
+        </div>
       <div ng-view=""></div>
 
-      <div class="footer">
-        <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
-      </div>
     </div>
 
     <!-- build:js(.) scripts/vendor.js -->
@@ -60,7 +51,9 @@
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/about.js"></script>
-        <!--<script src="scripts/services/TasktList-Service.js"></script>-->
+        <script src="scripts/controllers/login.js"></script>
+        <script src="scripts/services/login-service.js"></script>
+        <script src="scripts/services/flash-service.js"></script>
         <!-- endbuild -->
 </body>
 </html>

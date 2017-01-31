@@ -1,26 +1,13 @@
 <div class="container" ng-controller="MainCtrl as main">
+    <div class="header">
+        <ul class="nav nav-pills pull-right">
+            <li class="active"><a ng-href="#/">Logout</a></li>
+        </ul>
+         <h3 class="text-muted">Planner</h3>
+    </div>
+    <div class="panel" >
         <div class="row">
-            
-            <div class="col-sm-3 col-md-4" ">
-                <h2 class="text-center"> All </h2>
-                <div id="list-{{list.id}}" dragula='"bag"' ng-repeat="card in alllist.cards" dragula-scope="$parent.$parent" style="min-height: 10px;">
-                    <div id="card-{{.id}}" class="thumbnail">
-                        <div class="caption">
-                            <h3>{{ card.title }}</h3>
-                            <p>{{ card.description }}</p>
-                        </div>
-                        <footer>
-                            <a class="button button--small" onclick="cookiesAccepted();" data-event-category="Top" data-event-action="Cookies" data-event-label="OK" data-event-non-interaction="1">Edit</a>
-                            <span>
-                                or <a class="button button--small" onclick="RemoveTask(card.id);" data-event-category="Top" data-event-action="Cookies" data-event-label="More information" data-event-non-interaction="1">Remove</a>
-                            </span>
-                        </footer>
-                    </div>
-                </div>
-            </div>
-
-            
-            <div class="col-sm-3 col-md-4" ng-repeat="list in main.board.lists">
+            <div class="col-sm-8 col-md-3" ng-repeat="list in main.board.lists">
                 <h2 class="text-center">{{list.name}}</h2>
                 <div id="list-{{list.id}}" dragula='"bag"' ng-repeat="card in list.cards" dragula-scope="$parent.$parent" style="min-height: 10px;">
                     <div id="card-{{card.id}}" class="thumbnail">
@@ -38,4 +25,5 @@
                 </div>
             </div>
         </div>
+    </div>
 </div>
